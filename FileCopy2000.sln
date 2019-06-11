@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileCopy2000", "FileCopy200
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileCopy2000.BL", "FileCopy2000.BL\FileCopy2000.BL.csproj", "{87B31D66-39E0-43AC-9A82-63B01B92FA25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileCopy2000.BL Test", "FileCopy2000.BL Test\FileCopy2000.BL Test.csproj", "{224A42B0-920B-474B-9056-2F803674854C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{87B31D66-39E0-43AC-9A82-63B01B92FA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87B31D66-39E0-43AC-9A82-63B01B92FA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87B31D66-39E0-43AC-9A82-63B01B92FA25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{224A42B0-920B-474B-9056-2F803674854C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224A42B0-920B-474B-9056-2F803674854C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224A42B0-920B-474B-9056-2F803674854C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224A42B0-920B-474B-9056-2F803674854C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

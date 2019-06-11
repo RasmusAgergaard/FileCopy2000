@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileCopy2000"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="600">
     <Grid>
-        
+        <StackPanel Orientation="Horizontal" Height="20">
+            <Label Content="Test" VerticalAlignment="Center" HorizontalAlignment="Center" Width="75"/>
+            <TextBox TextWrapping="NoWrap" Text="TextBox" Width="150"/>
+            <Button Content="Run Action"/>
+        </StackPanel>
     </Grid>
 </Window>

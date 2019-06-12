@@ -5,19 +5,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FileCopy2000.BL_Test
 {
     [TestClass]
-    public class FileActionTest
+    public class JobTest
     {
         [TestMethod]
         public void IsValidTest()
         {
             //Arrange
-            var action1 = new FileAction(types.Copy, "Copy folder to location");
-            action1.SetFromPath("//DS212J2/test1");
-            action1.SetToPath("//DS212J2/test2");
+            var job1 = new Job(types.Copy, "Copy folder to location");
+            job1.SetFromPath("//DS212J2/test1");
+            job1.SetToPath("//DS212J2/test2");
             var expected = true;
 
             //Act
-            var actual = action1.IsValid();
+            var actual = job1.IsValid();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -27,12 +27,12 @@ namespace FileCopy2000.BL_Test
         public void MissingToPathValidTest()
         {
             //Arrange
-            var action1 = new FileAction(types.Copy, "Copy folder to location");
-            action1.SetFromPath("//DS212J2/test1");
+            var job1 = new Job(types.Copy, "Copy folder to location");
+            job1.SetFromPath("//DS212J2/test1");
             var expected = false;
 
             //Act
-            var actual = action1.IsValid();
+            var actual = job1.IsValid();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -42,12 +42,12 @@ namespace FileCopy2000.BL_Test
         public void MissingFromPathValidTest()
         {
             //Arrange
-            var action1 = new FileAction(types.Copy, "Copy folder to location");
-            action1.SetToPath("//DS212J2/test2");
+            var job1 = new Job(types.Copy, "Copy folder to location");
+            job1.SetToPath("//DS212J2/test2");
             var expected = false;
 
             //Act
-            var actual = action1.IsValid();
+            var actual = job1.IsValid();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -57,13 +57,13 @@ namespace FileCopy2000.BL_Test
         public void MissingNameValidTest()
         {
             //Arrange
-            var action1 = new FileAction(types.Copy, "");
-            action1.SetFromPath("//DS212J2/test1");
-            action1.SetToPath("//DS212J2/test2");
+            var job1 = new Job(types.Copy, "");
+            job1.SetFromPath("//DS212J2/test1");
+            job1.SetToPath("//DS212J2/test2");
             var expected = false;
 
             //Act
-            var actual = action1.IsValid();
+            var actual = job1.IsValid();
 
             //Assert
             Assert.AreEqual(expected, actual);

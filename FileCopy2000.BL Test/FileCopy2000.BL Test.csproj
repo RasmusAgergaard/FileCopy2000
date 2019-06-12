@@ -49,9 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileActionTest.cs" />
+    <Compile Include="JobTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FileActionHandlerTest.cs" />
+    <Compile Include="JobHandlerTest.cs" />
+    <Compile Include="JobStoreTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

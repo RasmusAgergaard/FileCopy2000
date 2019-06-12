@@ -5,12 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileCopy2000"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600">
+        Title="MainWindow" Height="250" Width="500">
     <Grid>
-        <StackPanel Orientation="Horizontal" Height="20">
-            <Label Content="Test" VerticalAlignment="Center" HorizontalAlignment="Center" Width="75"/>
-            <TextBox TextWrapping="NoWrap" Text="TextBox" Width="150"/>
-            <Button Content="Run Action"/>
-        </StackPanel>
+        <ComboBox x:Name="ComboBoxJobs" 
+            HorizontalAlignment="Left" 
+            Margin="10,36,0,0" 
+            VerticalAlignment="Top" 
+            Width="280"
+            ItemsSource="{Binding JobsToDisplay}"
+            DisplayMemberPath="Name"
+            SelectedValuePath="Type" SelectionChanged="ComboBoxJobs_SelectionChanged"/>
+        <Button x:Name="ButtonRunJob" Content="Run Job" Margin="372,116,10,0" Click="Button_Click_Run_Job" IsEnabled="False" Height="40" VerticalAlignment="Top"/>
+        <Label Content="Pick Job:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelJobType" Content="" HorizontalAlignment="Left" Margin="89,63,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelFromPath" Content="" HorizontalAlignment="Left" Margin="89,94,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelToPath" Content="" HorizontalAlignment="Left" Margin="89,125,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonEditJob" Content="Edit Job" Margin="372,91,10,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <Label Content="Job Type: " HorizontalAlignment="Left" Margin="14,63,0,0" VerticalAlignment="Top"/>
+        <Label Content="From Path:" HorizontalAlignment="Left" Margin="14,94,0,0" VerticalAlignment="Top"/>
+        <Label Content="To Path:" HorizontalAlignment="Left" Margin="14,125,0,0" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxInput" Height="23" Margin="305,35,10,0" TextWrapping="Wrap" VerticalAlignment="Top" IsEnabled="False"/>
+        <Label Content="Folder name:" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top"/>
+        <Separator Height="10" Margin="10,161,10,0" VerticalAlignment="Top"/>
+        <Label Content="Status:" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="LabelMessage" Content="Ready..." HorizontalAlignment="Left" Margin="89,176,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="ButtonAddNewJob" Content="Add New Job" Margin="372,66,10,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileAction.cs" />
-    <Compile Include="FileActionHandler.cs" />
+    <Compile Include="Job.cs" />
+    <Compile Include="JobHandler.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="JobStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

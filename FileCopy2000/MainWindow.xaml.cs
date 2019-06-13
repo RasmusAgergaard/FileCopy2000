@@ -19,6 +19,19 @@ namespace FileCopy2000
             JobsToDisplay = jobStore.Jobs;
         }
 
+        private void ButtonAddNewJob_Click(object sender, RoutedEventArgs e)
+        {
+            var job = new Job(types.Copy, "null", false);
+            var addEditDialog = new AddEditDialog(this, dialogTypes.Add, job);
+            addEditDialog.ShowDialog();
+        }
+
+        private void ButtonEditJob_Click(object sender, RoutedEventArgs e)
+        {
+            var addEditDialog = new AddEditDialog(this, dialogTypes.Edit, (Job)ComboBoxJobs.SelectedItem);
+            addEditDialog.ShowDialog();
+        }
+
         private void Button_Click_Run_Job(object sender, RoutedEventArgs e)
         {
             var job = (Job)ComboBoxJobs.SelectedItem;
@@ -118,5 +131,7 @@ namespace FileCopy2000
 
             
         }
+
+
     }
 }

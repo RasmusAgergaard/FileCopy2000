@@ -9,4 +9,6 @@ namespace FileCopy2000.BL
     public enum types { Copy};
 
     public enum messageTypes { Normal, Success, Warning, Error};
+
+    public enum dialogTypes { Add, Edit};
 }

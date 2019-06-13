@@ -20,7 +20,7 @@
         <Label x:Name="LabelJobType" Content="" HorizontalAlignment="Left" Margin="89,63,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelFromPath" Content="" HorizontalAlignment="Left" Margin="89,94,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelToPath" Content="" HorizontalAlignment="Left" Margin="89,125,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ButtonEditJob" Content="Edit Job" Margin="372,91,10,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <Button x:Name="ButtonEditJob" Content="Edit Job" Margin="372,91,10,0" VerticalAlignment="Top" IsEnabled="False" Click="ButtonEditJob_Click"/>
         <Label Content="Job Type: " HorizontalAlignment="Left" Margin="14,63,0,0" VerticalAlignment="Top"/>
         <Label Content="From Path:" HorizontalAlignment="Left" Margin="14,94,0,0" VerticalAlignment="Top"/>
         <Label Content="To Path:" HorizontalAlignment="Left" Margin="14,125,0,0" Height="26" VerticalAlignment="Top"/>
@@ -28,6 +28,6 @@
         <Label Content="Folder name:" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top"/>
         <Separator Height="10" Margin="10,161,10,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelMessage" Content="" Margin="14,176,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="ButtonAddNewJob" Content="Add New Job" Margin="372,66,10,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonAddNewJob" Content="Add New Job" Margin="372,66,10,0" VerticalAlignment="Top" Click="ButtonAddNewJob_Click"/>
     </Grid>
 </Window>

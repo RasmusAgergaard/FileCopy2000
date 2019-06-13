@@ -8,15 +8,15 @@
         Title="AddEditDialog" Height="295" Width="400">
     <Grid>
         <Label x:Name="LabelTitle" Content="Set this label on load" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox Height="23" Margin="95,64,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxName" Height="23" Margin="95,64,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Label Content="Job Name:" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="80"/>
-        <TextBox Height="23" Margin="95,92,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Label Content="Job Type:" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" Width="80"/>
-        <TextBox Height="23" Margin="95,123,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxFromPath" Height="23" Margin="95,123,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Label Content="From Path:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="80"/>
-        <TextBox Height="23" Margin="95,154,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxToPath" Height="23" Margin="95,154,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Label Content="To Path:" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Width="80"/>
-        <Button Content="Save Job" Margin="282,210,10,0" VerticalAlignment="Top" Height="30"/>
+        <Button x:Name="ButtonSaveJob" Content="Save Job" Margin="282,210,10,0" VerticalAlignment="Top" Height="30"/>
+        <ComboBox x:Name="ComboBoxType" Margin="95,96,10,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

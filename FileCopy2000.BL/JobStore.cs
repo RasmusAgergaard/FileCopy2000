@@ -6,7 +6,7 @@ namespace FileCopy2000.BL
     {
         public JobStore()
         {
-            //********** TEST ITEMS **********//
+            //********** TEST JOBS **********//
             var testJobs = new List<Job>()
             {
                 new Job(types.Copy, "Test1", true) {},
@@ -21,7 +21,7 @@ namespace FileCopy2000.BL
             testJobs[1].SetToPath("C:/Code/");
             testJobs[2].SetFromPath("C:/Code/Test1");
             testJobs[2].SetToPath("C:/Code/");
-            testJobs[3].SetFromPath("C:/Code/Test1");
+            testJobs[3].SetFromPath("");
             testJobs[3].SetToPath("C:/Code/");
 
             Jobs = testJobs;

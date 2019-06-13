@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Media;
 
 namespace FileCopy2000
 {
@@ -22,13 +23,30 @@ namespace FileCopy2000
         {
             var job = (Job)ComboBoxJobs.SelectedItem;
             job.Run(TextBoxInput.Text);
+            SetMessage("Job ran successfully", messageTypes.Success);
         }
 
         private void ComboBoxJobs_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+            ValidCheckAndSetMessage();
             EnableButtonsCheck();
             EnableInputCheck();
             SetLabels();
+        }
+
+        private void ValidCheckAndSetMessage()
+        {
+            var job = (Job)ComboBoxJobs.SelectedItem;
+
+            if (job.IsValid())
+            {
+                SetMessage("", messageTypes.Normal);
+            }
+            else
+            {
+                SetMessage("Warning: Selected job is not valid", messageTypes.Warning);
+
+            }
         }
 
         private void EnableButtonsCheck()
@@ -65,6 +83,40 @@ namespace FileCopy2000
             LabelJobType.Content = job.Type.ToString();
             LabelFromPath.Content = job.FromPath;
             LabelToPath.Content = job.ToPath;
+        }
+
+        private void SetMessage(string message, messageTypes messageType)
+        {
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                LabelMessage.Content = "Ready...";
+            }
+            else
+            {
+                LabelMessage.Content = message;
+            }
+
+            switch (messageType)
+            {
+                case messageTypes.Normal:
+                    LabelMessage.Foreground = new SolidColorBrush(Colors.Black);
+                    LabelMessage.Background = new SolidColorBrush(Colors.White);
+                    break;
+                case messageTypes.Success:
+                    LabelMessage.Foreground = new SolidColorBrush(Colors.White);
+                    LabelMessage.Background = new SolidColorBrush(Colors.Green);
+                    break;
+                case messageTypes.Warning:
+                    LabelMessage.Foreground = new SolidColorBrush(Colors.Black);
+                    LabelMessage.Background = new SolidColorBrush(Colors.Yellow);
+                    break;
+                case messageTypes.Error:
+                    LabelMessage.Foreground = new SolidColorBrush(Colors.White);
+                    LabelMessage.Background = new SolidColorBrush(Colors.Red);
+                    break;
+            }
+
+            
         }
     }
 }

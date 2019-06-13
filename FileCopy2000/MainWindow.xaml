@@ -27,8 +27,7 @@
         <TextBox x:Name="TextBoxInput" Height="23" Margin="305,35,10,0" TextWrapping="Wrap" VerticalAlignment="Top" IsEnabled="False"/>
         <Label Content="Folder name:" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top"/>
         <Separator Height="10" Margin="10,161,10,0" VerticalAlignment="Top"/>
-        <Label Content="Status:" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label x:Name="LabelMessage" Content="Ready..." HorizontalAlignment="Left" Margin="89,176,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="LabelMessage" Content="" Margin="14,176,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Button x:Name="ButtonAddNewJob" Content="Add New Job" Margin="372,66,10,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

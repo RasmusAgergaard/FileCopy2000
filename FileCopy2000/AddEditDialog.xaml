@@ -1,0 +1,22 @@
+﻿<Window x:Class="FileCopy2000.AddEditDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileCopy2000"
+        mc:Ignorable="d"
+        Title="AddEditDialog" Height="295" Width="400">
+    <Grid>
+        <Label x:Name="LabelTitle" Content="Set this label on load" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox Height="23" Margin="95,64,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Job Name:" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox Height="23" Margin="95,92,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Job Type:" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox Height="23" Margin="95,123,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="From Path:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox Height="23" Margin="95,154,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="To Path:" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button Content="Save Job" Margin="282,210,10,0" VerticalAlignment="Top" Height="30"/>
+
+    </Grid>
+</Window>

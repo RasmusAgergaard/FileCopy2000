@@ -1,0 +1,38 @@
+﻿<?xml version="1.0"?>
+<ArrayOfJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Job>
+    <Type>Copy</Type>
+    <Name>Test1</Name>
+    <FromPath>C:/Code/Test1</FromPath>
+    <ToPath>C:/Code/</ToPath>
+    <RequiresInput>true</RequiresInput>
+  </Job>
+  <Job>
+    <Type>Copy</Type>
+    <Name>Test2</Name>
+    <FromPath>C:/Code/Test1</FromPath>
+    <ToPath>C:/Code/</ToPath>
+    <RequiresInput>true</RequiresInput>
+  </Job>
+  <Job>
+    <Type>Copy</Type>
+    <Name>Test3</Name>
+    <FromPath>C:/Code/Test1</FromPath>
+    <ToPath>C:/Code/</ToPath>
+    <RequiresInput>true</RequiresInput>
+  </Job>
+  <Job>
+    <Type>Copy</Type>
+    <Name>Test4</Name>
+    <FromPath />
+    <ToPath>C:/Code/</ToPath>
+    <RequiresInput>false</RequiresInput>
+  </Job>
+  <Job>
+    <Type>Copy</Type>
+    <Name>dasdasdas</Name>
+    <FromPath>dasdsa</FromPath>
+    <ToPath>dsads</ToPath>
+    <RequiresInput>true</RequiresInput>
+  </Job>
+</ArrayOfJob>

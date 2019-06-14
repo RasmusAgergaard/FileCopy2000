@@ -10,15 +10,15 @@ namespace FileCopy2000.BL_Test
         [TestMethod]
         public void CopyAndMoveFolderTest()
         {
-            //Arrange
-            var jobCopy = new Job(types.Copy, "Copy folder to location");
-            jobCopy.SetFromPath("C:/Code/Test1");
-            jobCopy.SetToPath("C:/Code/Test2");
+            ////Arrange
+            //var jobCopy = new Job(types.Copy, "Copy folder to location");
+            //jobCopy.SetFromPath("C:/Code/Test1");
+            //jobCopy.SetToPath("C:/Code/Test2");
 
-            //Act
-            jobCopy.Run();
+            ////Act
+            //jobCopy.Run();
 
-            //Assert
+            ////Assert
         }
     }
 }

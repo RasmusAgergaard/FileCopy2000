@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FileCopy2000.BL
+﻿namespace FileCopy2000.BL
 {
     public class Job
     {
+        public Job()
+        {
+
+        }
+
         public Job(types type, string name, bool requiresInput)
         {
             Type = type;
@@ -15,10 +14,10 @@ namespace FileCopy2000.BL
             RequiresInput = requiresInput;
         }
 
-        public types? Type { get; private set; }
-        public string Name { get; private set; }
-        public string FromPath { get; private set; }
-        public string ToPath { get; private set; }
+        public types? Type { get; set; }
+        public string Name { get; set; }
+        public string FromPath { get; set; }
+        public string ToPath { get; set; }
         public bool RequiresInput { get; set; }
 
         public void SetFromPath(string path)

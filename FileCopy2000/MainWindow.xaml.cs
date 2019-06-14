@@ -1,6 +1,7 @@
 ﻿using FileCopy2000.BL;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Media;
 
@@ -8,27 +9,35 @@ namespace FileCopy2000
 {
     public partial class MainWindow : Window
     {
-        public List<Job> JobsToDisplay { get; set; }
+        public List<Job> Jobs { get; set; }
+        public ObservableCollection<Job> JobsToDisplay { get; set; }
+        public JobStore MainJobStore { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
             DataContext = this;
 
-            var jobStore = new JobStore();
-            JobsToDisplay = jobStore.Jobs;
+            MainJobStore = new JobStore();
+            Jobs = MainJobStore.LoadJobs();
+
+            //This is only for the combobox to update
+            JobsToDisplay = new ObservableCollection<Job>();
+            UpdateComboBoxContent();
         }
 
         private void ButtonAddNewJob_Click(object sender, RoutedEventArgs e)
         {
+            ComboBoxJobs.SelectedItem = null;
+
             var job = new Job(types.Copy, "null", false);
-            var addEditDialog = new AddEditDialog(this, dialogTypes.Add, job);
+            var addEditDialog = new AddEditDialog(this, dialogTypes.Add, job, -1);
             addEditDialog.ShowDialog();
         }
 
         private void ButtonEditJob_Click(object sender, RoutedEventArgs e)
         {
-            var addEditDialog = new AddEditDialog(this, dialogTypes.Edit, (Job)ComboBoxJobs.SelectedItem);
+            var addEditDialog = new AddEditDialog(this, dialogTypes.Edit, (Job)ComboBoxJobs.SelectedItem, ComboBoxJobs.SelectedIndex);
             addEditDialog.ShowDialog();
         }
 
@@ -51,14 +60,17 @@ namespace FileCopy2000
         {
             var job = (Job)ComboBoxJobs.SelectedItem;
 
-            if (job.IsValid())
+            if (job != null)
             {
-                SetMessage("", messageTypes.Normal);
-            }
-            else
-            {
-                SetMessage("Warning: Selected job is not valid", messageTypes.Warning);
+                if (job.IsValid())
+                {
+                    SetMessage("", messageTypes.Normal);
+                }
+                else
+                {
+                    SetMessage("Warning: Selected job is not valid", messageTypes.Warning);
 
+                }
             }
         }
 
@@ -80,25 +92,38 @@ namespace FileCopy2000
         {
             var job = (Job)ComboBoxJobs.SelectedItem;
 
-            if (job.RequiresInput)
+            if (job != null)
             {
-                TextBoxInput.IsEnabled = true;
+                if (job.RequiresInput)
+                {
+                    TextBoxInput.IsEnabled = true;
+                }
+                else
+                {
+                    TextBoxInput.IsEnabled = false;
+                }
+            }
+        }
+
+        public void SetLabels()
+        {
+            var job = (Job)ComboBoxJobs.SelectedItem;
+
+            if (job != null)
+            {
+                LabelJobType.Content = job.Type.ToString();
+                LabelFromPath.Content = job.FromPath;
+                LabelToPath.Content = job.ToPath;
             }
             else
             {
-                TextBoxInput.IsEnabled = false;
+                LabelJobType.Content = "";
+                LabelFromPath.Content = "";
+                LabelToPath.Content = "";
             }
         }
 
-        private void SetLabels()
-        {
-            var job = (Job)ComboBoxJobs.SelectedItem;
-            LabelJobType.Content = job.Type.ToString();
-            LabelFromPath.Content = job.FromPath;
-            LabelToPath.Content = job.ToPath;
-        }
-
-        private void SetMessage(string message, messageTypes messageType)
+        public void SetMessage(string message, messageTypes messageType)
         {
             if (string.IsNullOrWhiteSpace(message))
             {
@@ -132,6 +157,20 @@ namespace FileCopy2000
             
         }
 
+        public void UpdateComboBoxContent()
+        {
+            JobsToDisplay.Clear();
 
+            if (Jobs != null)
+            {
+                foreach (var job in Jobs)
+                {
+                    JobsToDisplay.Add(job);
+                }
+
+                ComboBoxJobs.ItemsSource = JobsToDisplay;
+                ComboBoxJobs.DisplayMemberPath = "Name";
+            }
+        }
     }
 }

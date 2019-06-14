@@ -15,8 +15,11 @@
         <Label Content="From Path:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="80"/>
         <TextBox x:Name="TextBoxToPath" Height="23" Margin="95,154,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Label Content="To Path:" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Width="80"/>
-        <Button x:Name="ButtonSaveJob" Content="Save Job" Margin="282,210,10,0" VerticalAlignment="Top" Height="30"/>
-        <ComboBox x:Name="ComboBoxType" Margin="95,96,10,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonSaveJob" Content="Save Job" Margin="282,210,10,0" VerticalAlignment="Top" Height="30" Click="ButtonSaveJob_Click"/>
+        <ComboBox 
+            x:Name="ComboBoxType" 
+            Margin="95,96,10,0" 
+            VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

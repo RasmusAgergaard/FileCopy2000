@@ -12,9 +12,7 @@
             Margin="10,36,0,0" 
             VerticalAlignment="Top" 
             Width="280"
-            ItemsSource="{Binding JobsToDisplay}"
-            DisplayMemberPath="Name"
-            SelectedValuePath="Type" SelectionChanged="ComboBoxJobs_SelectionChanged"/>
+            SelectionChanged="ComboBoxJobs_SelectionChanged"/>
         <Button x:Name="ButtonRunJob" Content="Run Job" Margin="372,116,10,0" Click="Button_Click_Run_Job" IsEnabled="False" Height="40" VerticalAlignment="Top"/>
         <Label Content="Pick Job:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelJobType" Content="" HorizontalAlignment="Left" Margin="89,63,0,0" VerticalAlignment="Top"/>

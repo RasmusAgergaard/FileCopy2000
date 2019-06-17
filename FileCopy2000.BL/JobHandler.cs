@@ -10,12 +10,12 @@ namespace FileCopy2000.BL
 
             foreach (string dirPath in Directory.GetDirectories(job.FromPath, "*", SearchOption.AllDirectories))
             {
-                Directory.CreateDirectory(dirPath.Replace(job.FromPath, job.ToPath + folderName));
+                Directory.CreateDirectory(dirPath.Replace(job.FromPath, job.ToPath + "/" + folderName));
             }
 
             foreach (string newPath in Directory.GetFiles(job.FromPath, "*", SearchOption.AllDirectories))
             {
-                File.Copy(newPath, newPath.Replace(job.FromPath, job.ToPath + folderName), true);
+                File.Copy(newPath, newPath.Replace(job.FromPath, job.ToPath + "/" + folderName), true);
             }
         }
     }

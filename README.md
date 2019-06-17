@@ -16,7 +16,7 @@ The program is designed to be expendable, if there is a future need for other ty
 ## About FileCopy2000 ![alt text](https://github.com/RasmusAgergaard/FileCopy2000/blob/master/Images/Icons/filecopy2000_icon_16x16.png?raw=true "Logo small")
 Created with Windows Presentation Foundation(WPF) and C#.
 
-#### Screenshot
+## Screenshots ![alt text](https://github.com/RasmusAgergaard/FileCopy2000/blob/master/Images/Icons/filecopy2000_icon_16x16.png?raw=true "Logo small")
 
 Main screen
 

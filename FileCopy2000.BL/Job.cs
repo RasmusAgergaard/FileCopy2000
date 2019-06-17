@@ -1,4 +1,6 @@
-﻿namespace FileCopy2000.BL
+﻿using System.Diagnostics;
+
+namespace FileCopy2000.BL
 {
     public class Job
     {
@@ -53,6 +55,11 @@
                     jobHandler.CopyAndMoveFolder(this, folderName);
                     break;
             }
+        }
+
+        public void OpenToPathFolder(string folderName)
+        {
+            Process.Start(ToPath + "/" + folderName);
         }
     }
 }

@@ -45,6 +45,10 @@ namespace FileCopy2000
         {
             var job = (Job)ComboBoxJobs.SelectedItem;
             job.Run(TextBoxInput.Text);
+            job.OpenToPathFolder(TextBoxInput.Text);
+
+            TextBoxInput.Text = "";
+
             SetMessage("Job ran successfully", messageTypes.Success);
         }
 

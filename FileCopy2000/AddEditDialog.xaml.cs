@@ -27,9 +27,11 @@ namespace FileCopy2000
             {
                 case dialogTypes.Add:
                     LabelTitle.Content = "Add New Job";
+                    ButtonDeleteJob.IsEnabled = false;
                     break;
                 case dialogTypes.Edit:
                     LabelTitle.Content = "Edit Job";
+                    ButtonDeleteJob.IsEnabled = true;
                     FillFields(selectedJob);
                     break;
             }    
@@ -57,10 +59,13 @@ namespace FileCopy2000
                     break;
             }
 
-            _mainWindow.UpdateComboBoxContent();
-            _mainWindow.SetLabels();
+            UpdateSaveAndClose();
+        }
 
-            Close();
+        private void ButtonDeleteJob_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteJob();
+            UpdateSaveAndClose();
         }
 
         private void AddNewJobToList()
@@ -80,6 +85,21 @@ namespace FileCopy2000
             tempJob.SetToPath(TextBoxToPath.Text);
 
             _mainWindow.Jobs[_listIndex] = tempJob;
+        }
+
+        private void DeleteJob()
+        {
+            _mainWindow.Jobs.RemoveAt(_listIndex);
+        }
+
+        private void UpdateSaveAndClose()
+        {
+            _mainWindow.UpdateComboBoxContent();
+            _mainWindow.SetLabels();
+
+            _mainWindow.MainJobStore.SaveJobs(_mainWindow.Jobs);
+
+            Close();
         }
     }
 }

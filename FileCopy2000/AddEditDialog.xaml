@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileCopy2000"
         mc:Ignorable="d"
-        Title="AddEditDialog" Height="295" Width="400">
+        Title="Add / Edit Jobs" Height="295" Width="400">
     <Grid>
         <Label x:Name="LabelTitle" Content="Set this label on load" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20"/>
         <TextBox x:Name="TextBoxName" Height="23" Margin="95,64,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
@@ -20,6 +20,7 @@
             x:Name="ComboBoxType" 
             Margin="95,96,10,0" 
             VerticalAlignment="Top"/>
+        <Button x:Name="ButtonDeleteJob" Content="Delete Job" Margin="177,210,115,0" VerticalAlignment="Top" Height="30" Click="ButtonDeleteJob_Click" IsEnabled="False"/>
 
     </Grid>
 </Window>

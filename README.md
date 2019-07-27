@@ -8,7 +8,7 @@ The program is designed to be expendable, if there is a future need for other ty
 ## Features ![alt text](https://github.com/RasmusAgergaard/FileCopy2000/blob/master/Images/Icons/filecopy2000_icon_16x16.png?raw=true "Logo small")
 - Add, edit and delete Jobs
 - Jobs are locally saved to a .xml file
-- Currently only "copy" type Jobs are supported, but the program is easy exepandeble
+- Currently only "copy" type Jobs are supported, but the program is easy expandable
 
 ## Download ![alt text](https://github.com/RasmusAgergaard/FileCopy2000/blob/master/Images/Icons/filecopy2000_icon_16x16.png?raw=true "Logo small")
 [Download FileCopy2000 here](https://github.com/RasmusAgergaard/FileCopy2000/blob/master/Download/FileCopy2000.zip?raw=true) - Extract the .zip file, and run the exe file
